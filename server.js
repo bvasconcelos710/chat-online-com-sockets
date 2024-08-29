@@ -31,8 +31,8 @@ const server = net.createServer((socket) => {
         // Processa comandos após o nickname estar definido
         if (message.startsWith('!sendmsg ')) {
             const text = message.substring('!sendmsg'.length);
-            broadcast(`! msg ${clients[socket.remotePort].nickname} ${text}`, socket);
-            socket.write(`! msg ${clients[socket.remotePort].nickname} ${text}`);
+            broadcast(`!msg ${clients[socket.remotePort].nickname} ${text}`, socket);
+            socket.write(`!msg ${clients[socket.remotePort].nickname} ${text}`);
         } else if (message.startsWith('!changenickname')) {
             const newNickname = message.split('!changenickname')[1];
             const oldNickname = clients[socket.remotePort].nickname;

@@ -7,6 +7,7 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
+//'127.0.0.1' (localhost) alana '10.3.134.193' murilo 45677, '10.3.134.90'
 client.connect(3000, '127.0.0.1', () => {
     console.log('Conectado ao servidor.');
 });
@@ -20,5 +21,5 @@ client.on('close', () => {
 });
 
 rl.on('line', (input) => {
-    client.write(input + '\n');
+    client.write(input);
 });
